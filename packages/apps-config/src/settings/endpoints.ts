@@ -8,7 +8,7 @@ interface LinkOption extends Option {
   dnslink?: string;
 }
 
-function createDev(t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
+function createDev (t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
   return [
     {
       info: 'local',
@@ -18,7 +18,7 @@ function createDev(t: <T = string> (key: string, text: string, options: { ns: st
   ];
 }
 
-function createLive(t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
+function createLive (t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
   return [
     {
       info: 'nodle',
@@ -28,7 +28,7 @@ function createLive(t: <T = string> (key: string, text: string, options: { ns: s
   ];
 }
 
-function createTest(t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
+function createTest (t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
   return [
     {
       info: 'nodle',
@@ -43,7 +43,7 @@ function createTest(t: <T = string> (key: string, text: string, options: { ns: s
 //   info: The chain logo name as defined in ../logos, specifically in namedLogos
 //   text: The text to display on teh dropdown
 //   value: The actual hosted secure websocket endpoint
-export default function create(t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
+export default function create (t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
   const ENV: LinkOption[] = [];
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
   const WS_URL = process.env.WS_URL || (window as any).process_env?.WS_URL as string;
