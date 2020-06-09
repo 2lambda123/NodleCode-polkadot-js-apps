@@ -6,11 +6,11 @@ import { Hash } from '@polkadot/types/interfaces';
 
 import { useApi, useCall } from '@polkadot/react-hooks';
 
-function transform(proposals: Hash[]): number {
+function transform (proposals: Hash[]): number {
   return proposals.length;
 }
 
-export default function useCounter(): number {
+export default function useCounter (): number {
   const { api, isApiReady } = useApi();
   const counter = useCall<number>(isApiReady && api.query.financialCommittee?.proposals, [], {
     transform

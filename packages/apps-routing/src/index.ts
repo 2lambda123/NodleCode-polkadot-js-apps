@@ -33,7 +33,7 @@ import toolbox from './toolbox';
 import transfer from './transfer';
 import treasury from './treasury';
 
-export default function create(t: <T = string> (key: string, text: string, options: { ns: string }) => T): Routes {
+export default function create (t: <T = string> (key: string, text: string, options: { ns: string }) => T): Routes {
   return appSettings.uiMode === 'light'
     ? [
       // dashboard,

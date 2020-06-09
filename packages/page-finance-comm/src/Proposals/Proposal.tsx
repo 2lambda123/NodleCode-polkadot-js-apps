@@ -23,7 +23,7 @@ interface Props {
   prime?: AccountId | null;
 }
 
-function Proposal({ className = '', imageHash, isMember, members, prime }: Props): React.ReactElement<Props> | null {
+function Proposal ({ className = '', imageHash, isMember, members, prime }: Props): React.ReactElement<Props> | null {
   const { api } = useApi();
   const proposal = useCall<ProposalType | null>(api.query.financialCommittee.proposalOf, [imageHash], {
     transform: (optProp: Option<ProposalType>) => optProp.unwrapOr(null)

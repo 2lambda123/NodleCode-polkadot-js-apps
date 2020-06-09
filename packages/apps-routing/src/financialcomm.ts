@@ -6,7 +6,7 @@ import { Route } from './types';
 
 import FinanceComm, { useCounter } from '@polkadot/app-finance-comm';
 
-export default function create(t: <T = string> (key: string, text: string, options: { ns: string }) => T): Route {
+export default function create (t: <T = string> (key: string, text: string, options: { ns: string }) => T): Route {
   return {
     Component: FinanceComm,
     display: {

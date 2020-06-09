@@ -19,7 +19,7 @@ export { default as useCounter } from './useCounter';
 
 interface Props extends AppProps, BareProps { }
 
-function FinanceCommApp({ basePath, className }: Props): React.ReactElement<Props> {
+function FinanceCommApp ({ basePath, className }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
   const { api } = useApi();
   const { isMember, members } = useMembers('financialCommittee');
