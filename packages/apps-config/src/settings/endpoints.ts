@@ -21,6 +21,11 @@ function createDev(t: <T = string> (key: string, text: string, options: { ns: st
 function createLive(t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
   return [
     {
+      info: 'nodle',
+      text: t<string>('rpc.nodle_main', 'Nodle Chain (Nodle Mainnet, hosted by Nodle)', { ns: 'apps-config' }),
+      value: 'wss://main1.nodleprotocol.io/'
+    },
+    {
       dnslink: 'polkadot',
       info: 'polkadot',
       text: t<string>('rpc.polkadot.parity', 'Polkadot (Live, hosted by Parity)', { ns: 'apps-config' }),
@@ -61,17 +66,17 @@ function createLive(t: <T = string> (key: string, text: string, options: { ns: s
       info: 'substrate',
       text: t<string>('rpc.kulupu', 'Kulupu (Kulupu Mainnet, hosted by Kulupu)', { ns: 'apps-config' }),
       value: 'wss://rpc.kulupu.network/ws'
-    },
-    {
-      info: 'nodle',
-      text: t<string>('rpc.nodle_main', 'Nodle Chain (Nodle Mainnet, hosted by Nodle)', { ns: 'apps-config' }),
-      value: 'wss://main1.nodleprotocol.io/'
     }
   ];
 }
 
 function createTest(t: <T = string> (key: string, text: string, options: { ns: string }) => T): LinkOption[] {
   return [
+    {
+      info: 'nodle',
+      text: t<string>('rpc.arcadia', 'Arcadia (Nodle Testnet, hosted by Nodle)', { ns: 'apps-config' }),
+      value: 'wss://arcadia1.nodleprotocol.io/'
+    },
     {
       dnslink: 'westend',
       info: 'westend',
@@ -87,11 +92,6 @@ function createTest(t: <T = string> (key: string, text: string, options: { ns: s
       info: 'substrate',
       text: t<string>('rpc.flamingfir', 'Flaming Fir (Substrate Testnet, hosted by Parity)', { ns: 'apps-config' }),
       value: 'wss://substrate-rpc.parity.io/'
-    },
-    {
-      info: 'nodle',
-      text: t<string>('rpc.arcadia', 'Arcadia (Nodle Testnet, hosted by Nodle)', { ns: 'apps-config' }),
-      value: 'wss://arcadia1.nodleprotocol.io/'
     }
   ];
 }
