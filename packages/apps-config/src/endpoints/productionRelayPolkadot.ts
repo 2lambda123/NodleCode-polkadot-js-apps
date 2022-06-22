@@ -47,17 +47,17 @@ export const prodParasPolkadot: EndpointOption[] = [
     providers: {
       Astar: 'wss://rpc.astar.network',
       OnFinality: 'wss://astar.api.onfinality.io/public-ws',
-      Dwellir: 'wss://astar-rpc.dwellir.com',
-      Pinknode: 'wss://public-rpc.pinknode.io/astar'
+      Dwellir: 'wss://astar-rpc.dwellir.com'
     }
   },
   {
     info: 'bifrost',
+    isUnreachable: true,
     homepage: 'https://crowdloan.bifrost.app',
     paraId: 2030,
     text: 'Bifrost',
     providers: {
-      Liebi: 'wss://hk.p.bifrost-rpc.liebi.com/ws'
+      Liebi: 'wss://bifrost-dot.liebi.com/ws'
     }
   },
   {
@@ -157,8 +157,7 @@ export const prodParasPolkadot: EndpointOption[] = [
     paraId: 2034,
     text: 'HydraDX',
     providers: {
-      'Galactic Council': 'wss://rpc-01.hydradx.io',
-      Dwellir: 'wss://hydradx-rpc.dwellir.com'
+      'Galactic Council': 'wss://rpc-01.hydradx.io'
     }
   },
   {
@@ -210,8 +209,7 @@ export const prodParasPolkadot: EndpointOption[] = [
       'Moonbeam Foundation': 'wss://wss.api.moonbeam.network',
       Blast: 'wss://moonbeam.public.blastapi.io',
       Dwellir: 'wss://moonbeam-rpc.dwellir.com',
-      OnFinality: 'wss://moonbeam.api.onfinality.io/public-ws',
-      Pinknode: 'wss://public-rpc.pinknode.io/moonbeam'
+      OnFinality: 'wss://moonbeam.api.onfinality.io/public-ws'
     }
   },
   {
@@ -221,8 +219,7 @@ export const prodParasPolkadot: EndpointOption[] = [
     text: 'Nodle',
     providers: {
       OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws',
-      Dwellir: 'wss://eden-rpc.dwellir.com',
-      Pinknode: 'wss://public-rpc.pinknode.io/nodle'
+      Dwellir: 'wss://eden-rpc.dwellir.com'
     }
   },
   {
@@ -241,7 +238,8 @@ export const prodParasPolkadot: EndpointOption[] = [
     text: 'Parallel',
     providers: {
       OnFinality: 'wss://parallel.api.onfinality.io/public-ws',
-      Parallel: 'wss://rpc.parallel.fi'
+      Parallel: 'wss://rpc.parallel.fi',
+      Dwellir: 'wss://parallel-rpc.dwellir.com'
     }
   },
   {

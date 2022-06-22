@@ -54,10 +54,7 @@ function Schedule ({ className = '' }: Props): React.ReactElement<Props> {
   const items = useCall<ScheduledExt[]>(api.query.scheduler.agenda.entries, undefined, OPT_SCHED);
 
   const filtered = useMemo(
-    () => bestNumber && items &&
-      items
-        .filter(({ blockNumber }) => blockNumber.gte(bestNumber))
-        .sort((a, b) => a.blockNumber.cmp(b.blockNumber)),
+    () => bestNumber && items && items.filter(({ blockNumber }) => blockNumber.gte(bestNumber)),
     [bestNumber, items]
   );
 

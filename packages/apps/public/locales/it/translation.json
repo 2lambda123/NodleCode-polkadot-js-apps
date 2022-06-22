@@ -1727,7 +1727,6 @@
   "rpc.header.dev": "Sviluppo",
   "rpc.header.kusama.relay": "",
   "rpc.header.live": "Mainnet",
-  "rpc.header.polkadot.relay": "",
   "rpc.header.rococo.relay": "",
   "rpc.header.test": "Testnet",
   "rpc.header.westend.relay": "",
@@ -1876,6 +1875,7 @@
   "rpc.test.mybank": "",
   "rpc.test.nftmart": "",
   "rpc.test.nodle-arcadia": "",
+  "rpc.test.oak": "",
   "rpc.test.opportunity": "",
   "rpc.test.pangolin": "",
   "rpc.test.phala": "",
@@ -1911,6 +1911,7 @@
   "rpc.westend.shibuya": "",
   "rpc.westend.wendala": "",
   "rpc.westend.whala": "",
+  "rpc/.header.nodle": "",
   "runners up": "finalisti",
   "scheduled": "agenda",
   "scheduling": "pianificando",
@@ -2135,5 +2136,5 @@
   "{{threshold}}, not passing": "{{threshold}}, respinta",
   "{{threshold}}, passing": "{{threshold}}, approvato",
   "{{type}} copied": "{{type}} copiato",
-  "{{value}}x voting balance, locked for {{lock}}x duration ({{period}} days)": "{{value}} x moltiplicatore di voto, fondi bloccati per {{lock}}x = {{period}} giorni"
+  "{{value}}x voting balance, locked for {{lock}}x enactment ({{period}} days)": "{{value}} x moltiplicatore di voto, fondi bloccati per {{lock}}x = {{period}} giorni"
 }

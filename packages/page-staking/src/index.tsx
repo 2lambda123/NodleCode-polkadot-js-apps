@@ -163,7 +163,6 @@ function StakingApp ({ basePath, className = '' }: Props): React.ReactElement<Pr
         </Route>
         <Route path={pathRef.current.payout}>
           <Payouts
-            historyDepth={targets.historyDepth}
             isInElection={isInElection}
             ownPools={ownPools}
             ownValidators={ownValidators}

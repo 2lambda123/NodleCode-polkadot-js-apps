@@ -25,10 +25,10 @@ function extractFunction (all: string[]): null | [number, () => React.ReactNode[
   return all.length
     ? [
       all.length,
-      () => all.map((value): React.ReactNode =>
+      () => all.map((who): React.ReactNode =>
         <AddressMini
-          key={value}
-          value={value}
+          key={who}
+          value={who}
         />
       )
     ]
@@ -38,10 +38,7 @@ function extractFunction (all: string[]): null | [number, () => React.ReactNode[
 function extractChilled (nominators: NominatedByType[] = [], slashingSpans?: SlashingSpans | null): Chilled {
   const chilled = slashingSpans
     ? nominators
-      .filter(({ submittedIn }) =>
-        !slashingSpans.lastNonzeroSlash.isZero() &&
-        slashingSpans.lastNonzeroSlash.gte(submittedIn)
-      )
+      .filter(({ submittedIn }) => !slashingSpans.lastNonzeroSlash.isZero() && slashingSpans.lastNonzeroSlash.gte(submittedIn))
       .map(({ nominatorId }) => nominatorId)
     : [];
 

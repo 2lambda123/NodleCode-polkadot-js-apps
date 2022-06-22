@@ -5,11 +5,11 @@ import type { TFunction } from '../types';
 import type { LinkOption } from './types';
 
 import { defaultT } from '../util';
-import { createNodle } from './nodle';
 import { createCustom, createDev, createOwn } from './development';
 import { prodChains, prodRelayKusama } from './production';
 import { testChains, testRelayRococo, testRelayWestend } from './testing';
 import { expandEndpoints } from './util';
+import { createNodle } from './nodle';
 
 export { CUSTOM_ENDPOINT_KEY } from './development';
 export * from './production';

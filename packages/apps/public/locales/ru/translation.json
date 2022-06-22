@@ -1754,7 +1754,6 @@
   "rpc.header.dev": "Разработка",
   "rpc.header.kusama.relay": "Kusama & связанные сети",
   "rpc.header.live": "Рабочие сети",
-  "rpc.header.polkadot.relay": "Polkadot & связанные сети",
   "rpc.header.rococo.relay": "Test Rococo & связанные сети",
   "rpc.header.test": "Тестовые сети",
   "rpc.header.westend.relay": "Test Westend & связанные сети",
@@ -1953,6 +1952,7 @@
   "rpc.test.mybank": "",
   "rpc.test.nftmart": "",
   "rpc.test.nodle-arcadia": "",
+  "rpc.test.oak": "",
   "rpc.test.opportunity": "",
   "rpc.test.pangolin": "",
   "rpc.test.pangoro": "",
@@ -1994,6 +1994,7 @@
   "rpc.westend.standard": "",
   "rpc.westend.wendala": "",
   "rpc.westend.whala": "",
+  "rpc/.header.nodle": "Nodle",
   "runners up": "претенденты",
   "scheduled": "",
   "scheduling": "планирование",
@@ -2210,5 +2211,5 @@
   "{{threshold}}, not passing": "{{threshold}}, не проходит",
   "{{threshold}}, passing": "{{threshold}}, проходит",
   "{{type}} copied": "",
-  "{{value}}x voting balance, locked for {{lock}}x duration ({{period}} days)": "{{value}}x баланс голосования, заблокировано на {{lock}}x ({{period}} дней)"
+  "{{value}}x voting balance, locked for {{lock}}x enactment ({{period}} days)": "{{value}}x баланс голосования, заблокировано на {{lock}}x ({{period}} дней)"
 }

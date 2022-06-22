@@ -3,7 +3,7 @@
 
 import { checkEndpoints } from './util';
 
-describe.skip('--SLOW--: check configured chain types', (): void => {
+describe('--SLOW--: check configured chain types', (): void => {
   checkEndpoints('./.github/chain-types.md', [
     'Unknown types'
   ]);

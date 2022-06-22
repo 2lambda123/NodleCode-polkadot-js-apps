@@ -10,28 +10,25 @@ import { useMemo } from 'react';
 import { createNamedHook, useApi, useCall } from '@polkadot/react-hooks';
 
 function extractNominators (nominations: [StorageKey, Option<Nominations>][]): NominatedByMap {
-  const mapped: NominatedByMap = {};
-
-  for (let i = 0; i < nominations.length; i++) {
-    const [key, optNoms] = nominations[i];
-
+  return nominations.reduce((mapped: NominatedByMap, [key, optNoms]) => {
     if (optNoms.isSome && key.args.length) {
       const nominatorId = key.args[0].toString();
       const { submittedIn, targets } = optNoms.unwrap();
 
-      for (let j = 0; j < targets.length; j++) {
-        const validatorId = targets[j].toString();
+      targets.forEach((_validatorId, index): void => {
+        const validatorId = _validatorId.toString();
+        const info = { index: index + 1, nominatorId, submittedIn };
 
         if (!mapped[validatorId]) {
-          mapped[validatorId] = [];
+          mapped[validatorId] = [info];
+        } else {
+          mapped[validatorId].push(info);
         }
-
-        mapped[validatorId].push({ index: j + 1, nominatorId, submittedIn });
-      }
+      });
     }
-  }
 
-  return mapped;
+    return mapped;
+  }, {});
 }
 
 function useNominationsImpl (isActive = true): NominatedByMap | undefined {

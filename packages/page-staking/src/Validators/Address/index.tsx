@@ -57,10 +57,7 @@ function expandInfo ({ exposure, validatorPrefs }: ValidatorInfo, minCommission?
   let stakeOwn: BN | undefined;
 
   if (exposure && exposure.total) {
-    nominators = exposure.others.map(({ value, who }) => ({
-      nominatorId: who.toString(),
-      value: value.unwrap()
-    }));
+    nominators = exposure.others.map(({ value, who }) => ({ nominatorId: who.toString(), value: value.unwrap() }));
     stakeTotal = exposure.total?.unwrap() || BN_ZERO;
     stakeOwn = exposure.own.unwrap();
     stakeOther = stakeTotal.sub(stakeOwn);

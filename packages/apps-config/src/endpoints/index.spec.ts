@@ -13,8 +13,6 @@ interface Endpoint {
 
 const allEndpoints = createWsEndpoints(undefined, false, false);
 
-const INVALID_CHARS = ['%'];
-
 describe('WS urls are all valid', (): void => {
   allEndpoints
     .filter(({ value }) =>
@@ -29,8 +27,7 @@ describe('WS urls are all valid', (): void => {
     }))
     .forEach(({ name, provider, value }) =>
       it(`${name}:: ${provider}`, (): void => {
-        assert(value.startsWith('wss://') || value.startsWith('light://substrate-connect/'), `${name}:: ${provider} -> ${value} should start with wss:// or light:// without invalid characters`);
-        assert(!INVALID_CHARS.some((c) => value.includes(c)), `${value} should not contain invalid characters such as ${INVALID_CHARS.join(', ')}`);
+        assert(value.startsWith('wss://') || value.startsWith('light://substrate-connect/'), `${name}:: ${provider} -> ${value} should start with wss:// or light://`);
       })
     );
 });

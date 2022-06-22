@@ -33,39 +33,41 @@ function queryAddress (address: string): void {
   window.location.hash = `/staking/query/${address}`;
 }
 
-function Validator ({ allSlashes, canSelect, filterName, info: { accountId, bondOther, bondOwn, bondTotal, commissionPer, isBlocking, isElected, isFavorite, key, lastPayout, numNominators, rankOverall, stakedReturnCmp }, isNominated, isSelected, nominatedBy = [], toggleFavorite, toggleSelected }: Props): React.ReactElement<Props> | null {
+function Validator ({ allSlashes, canSelect, filterName, info, isNominated, isSelected, nominatedBy = [], toggleFavorite, toggleSelected }: Props): React.ReactElement<Props> | null {
   const { t } = useTranslation();
   const { api } = useApi();
-  const accountInfo = useDeriveAccountInfo(accountId);
-  const [,, time] = useBlockTime(lastPayout);
+  const accountInfo = useDeriveAccountInfo(info.accountId);
+  const [,, time] = useBlockTime(info.lastPayout);
 
   const isVisible = useMemo(
     () => accountInfo
-      ? checkVisibility(api, key, accountInfo, filterName)
+      ? checkVisibility(api, info.key, accountInfo, filterName)
       : true,
-    [accountInfo, api, filterName, key]
+    [accountInfo, api, filterName, info]
   );
 
   const slashes = useMemo(
     () => (allSlashes || [])
-      .map(([era, all]) => ({ era, slashes: all.filter(({ validator }) => validator.eq(accountId)) }))
+      .map(([era, all]) => ({ era, slashes: all.filter(({ validator }) => validator.eq(info.accountId)) }))
       .filter(({ slashes }) => slashes.length),
-    [allSlashes, accountId]
+    [allSlashes, info]
   );
 
   const _onQueryStats = useCallback(
-    () => queryAddress(key),
-    [key]
+    () => queryAddress(info.key),
+    [info.key]
   );
 
   const _toggleSelected = useCallback(
-    () => toggleSelected(key),
-    [key, toggleSelected]
+    () => toggleSelected(info.key),
+    [info.key, toggleSelected]
   );
 
   if (!isVisible) {
     return null;
   }
+
+  const { accountId, bondOther, bondOwn, bondTotal, commissionPer, isBlocking, isElected, isFavorite, key, lastPayout, numNominators, rankOverall, stakedReturnCmp } = info;
 
   return (
     <tr>
@@ -112,7 +114,7 @@ function Validator ({ allSlashes, canSelect, filterName, info: { accountId, bond
           />
         )}
       </td>
-      <td className='number'>{rankOverall !== 0 && formatNumber(rankOverall)}</td>
+      <td className='number'>{formatNumber(rankOverall)}</td>
       <td className='address all'>
         <AddressSmall value={accountId} />
       </td>

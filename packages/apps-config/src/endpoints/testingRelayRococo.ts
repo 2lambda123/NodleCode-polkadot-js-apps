@@ -16,6 +16,15 @@ import { ROCOCO_GENESIS } from '../api/constants';
 // IMPORTANT: Alphabetical based on text
 export const testParasRococo: EndpointOption[] = [
   {
+    info: 'arctic',
+    isUnreachable: true, // https://github.com/polkadot-js/apps/issues/7420
+    paraId: 3025,
+    text: 'Arctic',
+    providers: {
+      Arctic: 'wss://arctic-rpc-parachain.icenetwork.io:9944'
+    }
+  },
+  {
     info: 'rococoBajun',
     isUnreachable: true, // https://github.com/polkadot-js/apps/issues/7593
     paraId: 3026,
@@ -66,7 +75,7 @@ export const testParasRococo: EndpointOption[] = [
   },
   {
     info: 'rocfinity',
-    paraId: 2021,
+    paraId: 2051,
     text: 'Efinity',
     providers: {
       Efinity: 'wss://rpc.rococo.efinity.io'
@@ -82,19 +91,10 @@ export const testParasRococo: EndpointOption[] = [
   },
   {
     info: 'rococoGM',
-    isUnreachable: true,
     paraId: 3019,
     text: 'GM Parachain',
     providers: {
-      // 'GM or Die DAO': 'wss://rococo.gmordie.com' // https://github.com/polkadot-js/apps/issues/7716
-    }
-  },
-  {
-    info: 'helixstreet',
-    paraId: 3025,
-    text: 'Helixstreet',
-    providers: {
-      Helixstreet: 'wss://rpc-rococo.helixstreet.io'
+      'GM or Die DAO': 'wss://rococo.gmordie.com'
     }
   },
   {
@@ -119,14 +119,6 @@ export const testParasRococo: EndpointOption[] = [
     text: 'Litentry',
     providers: {
       Litentry: 'wss://rpc.rococo-parachain-sg.litentry.io'
-    }
-  },
-  {
-    info: 'rococoMangata',
-    paraId: 2110,
-    text: 'Mangata',
-    providers: {
-      Mangata: 'wss://roccoco-testnet-collator-01.mangatafinance.cloud'
     }
   },
   {
@@ -165,7 +157,7 @@ export const testParasRococo: EndpointOption[] = [
   },
   {
     info: 'rococoKilt',
-    paraId: 2086,
+    paraId: 2015,
     text: 'RILT',
     providers: {
       'KILT Protocol': 'wss://rococo.kilt.io'
