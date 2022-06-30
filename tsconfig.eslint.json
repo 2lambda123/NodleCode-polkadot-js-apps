@@ -7,5 +7,9 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "composite": false
-  }
+  },
+  "eslint.validate": [
+    "json",
+    {"language": "typescript", "autoFix": true }
+  ]
 }
