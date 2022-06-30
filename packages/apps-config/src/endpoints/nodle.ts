@@ -3,17 +3,18 @@
 
 import type { TFunction } from '../types';
 import type { LinkOption } from './types';
+
 import { expandEndpoints } from './util';
 
 /* eslint-disable sort-keys */
 
-export function createNodle(t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
+export function createNodle (t: TFunction, firstOnly: boolean, withSort: boolean): LinkOption[] {
   return expandEndpoints(t, [
     {
       info: 'nodle',
       text: t('rpc.nodle-eden', 'Mainnet', { ns: 'apps-config' }),
       providers: {
-        Nodle: 'wss://nodle-parachain.api.onfinality.io/public-ws',
+        Nodle: 'wss://nodle-parachain.api.onfinality.io/public-ws'
       }
     },
     {
