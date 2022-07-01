@@ -39,7 +39,7 @@ export function createCustom (t: TFunction): LinkOption[] {
 
 export function createOwn (t: TFunction): LinkOption[] {
   try {
-    // this may not be available, e.g. when running via script
+    // this may not be available, e.g. when running via script.
     const storedItems = typeof localStorage === 'object' && typeof localStorage.getItem === 'function'
       ? localStorage.getItem(CUSTOM_ENDPOINT_KEY)
       : null;
