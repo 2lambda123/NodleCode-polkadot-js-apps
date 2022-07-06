@@ -9,6 +9,7 @@
   "rpc.header.kusama.relay": "Kusama & parachains",
   "rpc.header.live": "Live networks",
   "rpc.header.polkadot.relay": "Polkadot & parachains",
+  "rpc/.header.nodle": "Nodle",
   "rpc.header.rococo.relay": "Test Rococo & parachains",
   "rpc.header.test": "Test networks",
   "rpc.header.westend.relay": "Test Westend & parachains",
