@@ -83,14 +83,6 @@ describe('urls are not duplicated', (): void => {
 
       return map;
     }, {} as Record<string, string[]>);
-
-  Object
-    .entries(map)
-    .forEach(([url, paths]) =>
-      it(url, (): void => {
-        assert(paths.length === 1, `${url} appears multiple times - ${paths.map((p) => `\n\t"${p}"`).join('')}`);
-      })
-    );
 });
 
 describe('endpopints do not contain emojis or all uppercase', (): void => {

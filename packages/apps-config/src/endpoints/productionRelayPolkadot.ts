@@ -213,6 +213,15 @@ export const prodParasPolkadot: EndpointOption[] = [
     }
   },
   {
+    info: 'nodle',
+    homepage: 'https://www.nodle.com/',
+    paraId: 2026,
+    text: 'Nodle',
+    providers: {
+      OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws'
+    }
+  },
+  {
     info: 'origintrail-parachain',
     homepage: 'https://parachain.origintrail.io',
     text: 'OriginTrail Parachain',
@@ -281,15 +290,6 @@ export const prodParasPolkadot: EndpointOption[] = [
       'Unique America': 'wss://us-ws.unique.network/',
       'Unique Asia': 'wss://asia-ws.unique.network/',
       'Unique Europe': 'wss://eu-ws.unique.network/'
-    }
-  },
-  {
-    info: 'nodle',
-    homepage: 'https://www.nodle.com/',
-    paraId: 2002,
-    text: 'Nodle',
-    providers: {
-      OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws'
     }
   }
 ];
