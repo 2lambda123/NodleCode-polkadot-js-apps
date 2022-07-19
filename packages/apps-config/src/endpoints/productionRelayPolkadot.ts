@@ -282,6 +282,15 @@ export const prodParasPolkadot: EndpointOption[] = [
       'Unique Asia': 'wss://asia-ws.unique.network/',
       'Unique Europe': 'wss://eu-ws.unique.network/'
     }
+  },
+  {
+    info: 'nodle',
+    homepage: 'https://www.nodle.com/',
+    paraId: 2002,
+    text: 'Nodle',
+    providers: {
+      OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws'
+    }
   }
 ];
 
