@@ -207,11 +207,10 @@ export const prodChains: EndpointOption[] = [
     }
   },
   {
-    info: 'nodle',
-    text: 'Nodle',
+    info: 'plasm',
+    text: 'Plasm',
     providers: {
-      // Nodle: 'wss://main3.nodleprotocol.io', // https://github.com/polkadot-js/apps/issues/7652
-      OnFinality: 'wss://nodle.api.onfinality.io/public-ws'
+      'Stake Technologies': 'wss://rpc.plasmnet.io/'
     }
   },
   {
