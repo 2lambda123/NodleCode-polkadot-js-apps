@@ -260,7 +260,6 @@ export const prodParasPolkadot: EndpointOption[] = [
     paraId: 2053,
     providers: {
       OmniBTC: 'wss://omnibtc.io/ws'
-      OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws'
     }
   },
   {
