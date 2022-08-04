@@ -16,10 +16,6 @@
   },
   "sideEffects": false,
   "version": "0.118.1-n0",
-  "versions": {
-    "git": "0.118.1",
-    "npm": "0.118.1"
-  },
   "workspaces": [
     "packages/*"
   ],
