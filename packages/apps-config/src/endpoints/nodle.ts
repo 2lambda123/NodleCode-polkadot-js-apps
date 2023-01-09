@@ -1,7 +1,7 @@
-/* eslint-disable header/header */
 // Copyright 2017-2022 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+/* eslint-disable header/header */
 import type { TFunction } from '../types';
 import type { LinkOption } from './types';
 
