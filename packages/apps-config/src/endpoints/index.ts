@@ -6,6 +6,7 @@ import type { LinkOption } from './types';
 
 import { defaultT } from '../util';
 import { createCustom, createDev, createOwn } from './development';
+import { createNodle } from './nodle';
 import { prodChains, prodRelayKusama, prodRelayPolkadot } from './production';
 import { testChains, testRelayRococo, testRelayWestend } from './testing';
 import { expandEndpoints } from './util';
@@ -17,6 +18,15 @@ export * from './testing';
 export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, withSort = true): LinkOption[] {
   return [
     ...createCustom(t),
+    {
+      isDisabled: false,
+      isHeader: true,
+      isSpaced: true,
+      text: t('rpc/.header.nodle', 'Nodle', { ns: 'apps-config' }),
+      textBy: '',
+      value: ''
+    },
+    ...createNodle(t, firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,

@@ -310,7 +310,7 @@ export const prodParasPolkadot: EndpointOption[] = [
   },
   {
     info: 'nodle',
-    homepage: 'https://nodle.com',
+    homepage: 'https://www.nodle.com/',
     paraId: 2026,
     text: 'Nodle',
     providers: {
