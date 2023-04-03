@@ -1,7 +1,6 @@
-// SPDX-License-Identifier: Apache-2.0
-
 // Copyright 2017-2022 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
+
 /* eslint-disable header/header */
 import type { TFunction } from '../types.js';
 import type { LinkOption } from './types.js';
