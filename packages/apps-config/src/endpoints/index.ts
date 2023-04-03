@@ -35,6 +35,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       isSpaced: true,
       text: t('rpc/.header.nodle', 'Nodle', { ns: 'apps-config' }),
       textBy: '',
+      ui: {},
       value: ''
     },
     ...createNodle(t, firstOnly, withSort),

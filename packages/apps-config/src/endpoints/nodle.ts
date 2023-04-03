@@ -2,10 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /* eslint-disable header/header */
-import type { TFunction } from '../types';
-import type { LinkOption } from './types';
+import type { TFunction } from '../types.js';
+import type { LinkOption } from './types.js';
 
-import { expandEndpoints } from './util';
+import { nodesNodleSVG } from '../ui/logos/nodes';
+import { expandEndpoints } from './util.js';
 
 /* eslint-disable sort-keys */
 
@@ -17,7 +18,10 @@ export function createNodle (t: TFunction, firstOnly: boolean, withSort: boolean
       providers: {
         OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws'
       },
-      ui: {}
+      ui: {
+        color: '#1ab394',
+        logo: nodesNodleSVG
+      }
     },
     {
       info: 'nodle',
@@ -25,7 +29,10 @@ export function createNodle (t: TFunction, firstOnly: boolean, withSort: boolean
       providers: {
         OnFinality: 'wss://nodle-paradis.api.onfinality.io/public-ws'
       },
-      ui: {}
+      ui: {
+        color: '#1ab394',
+        logo: nodesNodleSVG
+      }
     }
   ], firstOnly, withSort);
 }

@@ -10,7 +10,7 @@ interface BaseOption {
   paraId?: number;
   summary?: string;
   teleport?: number[];
-  ui?: {
+  ui: {
     color?: string;
     logo?: string;
   }
