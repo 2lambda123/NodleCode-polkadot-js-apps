@@ -35,7 +35,6 @@ export { chainsKintsugiPNG } from './generated/kintsugiPNG.js';
 export { chainsKusamaSVG } from './generated/kusamaSVG.js';
 export { chainsListenPNG } from './generated/listenPNG.js';
 export { chainsLogionPNG } from './generated/logionPNG.js';
-export { chainsMangataPNG } from './generated/mangataPNG.js';
 export { chainsMoonsamaPNG } from './generated/moonsamaPNG.js';
 export { chainsMyriadPNG } from './generated/myriadPNG.js';
 export { chainsOakPNG } from './generated/oakPNG.js';

@@ -55,7 +55,7 @@ export { nodesImbuePNG } from './generated/imbuePNG.js';
 export { nodesIntegriteeSVG } from './generated/integriteeSVG.js';
 export { nodesInterlaySVG } from './generated/interlaySVG.js';
 export { nodesIpciSVG } from './generated/ipciSVG.js';
-export { nodesIpsePNG } from './generated/ipsePNG.js';
+export { nodesIpseSVG } from './generated/ipseSVG.js';
 export { nodesJazPNG } from './generated/jazPNG.js';
 export { nodesJoystreamSVG } from './generated/joystreamSVG.js';
 export { nodesJupiterSVG } from './generated/jupiterSVG.js';
