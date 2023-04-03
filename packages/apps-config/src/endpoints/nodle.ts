@@ -16,14 +16,16 @@ export function createNodle (t: TFunction, firstOnly: boolean, withSort: boolean
       text: t('rpc.nodle-eden', 'Mainnet', { ns: 'apps-config' }),
       providers: {
         OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws'
-      }
+      },
+      ui: {}
     },
     {
       info: 'nodle',
       text: t('rpc.nodle-paradis', 'Testnet', { ns: 'apps-config' }),
       providers: {
         OnFinality: 'wss://nodle-paradis.api.onfinality.io/public-ws'
-      }
+      },
+      ui: {}
     }
   ], firstOnly, withSort);
 }
