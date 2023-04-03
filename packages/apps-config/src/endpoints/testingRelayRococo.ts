@@ -302,18 +302,6 @@ export const testParasRococo: Omit<EndpointOption, 'teleport'>[] = [
     }
   },
   {
-    info: 'rococoMangata',
-    paraId: 2110,
-    providers: {
-      Mangata: 'wss://roccoco-testnet-collator-01.mangatafinance.cloud'
-    },
-    text: 'Mangata',
-    ui: {
-      color: '#030408',
-      logo: chainsMangataPNG
-    }
-  },
-  {
     info: 'rococoMd5',
     paraId: 2089,
     providers: {
