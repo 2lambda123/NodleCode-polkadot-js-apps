@@ -1,4 +1,3 @@
-// [object Object]
 // SPDX-License-Identifier: Apache-2.0
 
 // Copyright 2017-2022 @polkadot/apps-config authors & contributors
