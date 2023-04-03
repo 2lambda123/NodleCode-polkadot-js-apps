@@ -1,11 +1,13 @@
-// Copyright 2017-2022 @polkadot/apps-config authors & contributors
+// [object Object]
 // SPDX-License-Identifier: Apache-2.0
 
+// Copyright 2017-2022 @polkadot/apps-config authors & contributors
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable header/header */
 import type { TFunction } from '../types.js';
 import type { LinkOption } from './types.js';
 
-import { nodesNodleSVG } from '../ui/logos/nodes';
+import { nodesNodleSVG } from './../ui/logos/nodes/generated/nodleSVG.js';
 import { expandEndpoints } from './util.js';
 
 /* eslint-disable sort-keys */

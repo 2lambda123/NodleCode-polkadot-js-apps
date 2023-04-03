@@ -1781,7 +1781,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@polkadot/dev-test@npm:^0.72.32":
+"@polkadot/dev-test@npm:^0.72.32, @polkadot/dev-test@npm:latest":
   version: 0.72.32
   resolution: "@polkadot/dev-test@npm:0.72.32"
   dependencies:
@@ -13605,6 +13605,7 @@ fsevents@~2.3.2:
     "@crustio/crust-pin": ^1.0.0
     "@pinata/sdk": ^2.1.0
     "@polkadot/dev": ^0.72.32
+    "@polkadot/dev-test": latest
     "@types/chart.js": ^2.9.37
     "@types/file-saver": ^2.0.5
     "@types/react-beautiful-dnd": ^13.1.4
