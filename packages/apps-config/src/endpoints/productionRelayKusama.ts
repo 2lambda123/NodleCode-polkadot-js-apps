@@ -58,21 +58,6 @@ export const prodParasKusama: Omit<EndpointOption, 'teleport'>[] = [
     }
   },
   {
-    homepage: 'https://ajuna.io',
-    info: 'bajun',
-    paraId: 2119,
-    providers: {
-      AjunaNetwork: 'wss://rpc-parachain.bajun.network',
-      OnFinality: 'wss://bajun.api.onfinality.io/public-ws',
-      RadiumBlock: 'wss://bajun.public.curie.radiumblock.co/ws'
-    },
-    text: 'Bajun Network',
-    ui: {
-      color: '#161212',
-      logo: nodesBajunPNG
-    }
-  },
-  {
     homepage: 'https://app.basilisk.cloud',
     info: 'basilisk',
     paraId: 2090,
