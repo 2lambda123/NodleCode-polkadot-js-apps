@@ -39,7 +39,7 @@ function useAccountItemsImpl (): AccountItem[] | undefined {
     const promises = allAccounts.map((account) => api.query.substrateUniques.account.keys(account));
 
     Promise.all(promises)
-      .then((results) => mountedRef.current && setState(transformResults(results)))
+      .then((results) => mountedRef.current && setState(transformResults(results as StorageKey<[AccountId32, u32, u32]>[][])))
       .catch(console.error);
   }, [allAccounts, api.query.substrateUniques.account, mountedRef]);
 
