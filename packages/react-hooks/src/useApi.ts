@@ -9,10 +9,6 @@ import { useContext } from 'react';
 import { ApiCtx } from './ctx/Api.js';
 import { createNamedHook } from './createNamedHook.js';
 
-interface AnyObject {
-  [key: string]: any;
-}
-
 function useApiImpl (): ApiProps {
   const context = useContext(ApiCtx);
 
@@ -30,7 +26,7 @@ function useApiImpl (): ApiProps {
   };
 
   const overrideApiKeys = (path: string, newPath: string, api: ApiPromise) => {
-    const getObjectProperty = <T>(obj: AnyObject, propertyPath: string): T | undefined => {
+    const getObjectProperty = <T>(obj: ApiPromise, propertyPath: string): T | undefined => {
       const properties = propertyPath.split('.');
       let result: unknown = obj;
 
