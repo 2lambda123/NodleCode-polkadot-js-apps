@@ -17,8 +17,8 @@ function useApiImpl (): ApiProps {
   const context = useContext(ApiCtx);
 
   const modifyApiBySpecVersion = (chainSpecs: string, api: ApiPromise) => {
-    switch (chainSpecs) {
-      case '23': {
+    switch (true) {
+      case (Number(chainSpecs) >= 23): {
         const newApi = overrideApiKeys('events.uniques', 'events.substrateUniques', api);
 
         return overrideApiKeys('query.uniques', 'query.substrateUniques', newApi);
