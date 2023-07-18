@@ -31,12 +31,12 @@ function filter (records: EventRecord[]): Changes<u32> {
 
 function useCollectionIdsImpl (): u32[] | undefined {
   const { api } = useApi();
-  const startValue = useMapKeys(api.query.substrateUniques.class, [], OPT_KEYS);
+  const startValue = useMapKeys(api.query.uniques.class, [], OPT_KEYS);
 
   return useEventChanges([
-    api.events.substrateUniques.Created,
-    api.events.substrateUniques.Destroyed,
-    api.events.substrateUniques.ForceCreated
+    api.events.uniques.Created,
+    api.events.uniques.Destroyed,
+    api.events.uniques.ForceCreated
   ], filter, startValue);
 }
 

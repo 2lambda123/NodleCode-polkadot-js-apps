@@ -36,12 +36,12 @@ function useAccountItemsImpl (): AccountItem[] | undefined {
       return;
     }
 
-    const promises = allAccounts.map((account) => api.query.substrateUniques.account.keys(account));
+    const promises = allAccounts.map((account) => api.query.uniques.account.keys(account));
 
     Promise.all(promises)
-      .then((results) => mountedRef.current && setState(transformResults(results as StorageKey<[AccountId32, u32, u32]>[][])))
+      .then((results) => mountedRef.current && setState(transformResults(results)))
       .catch(console.error);
-  }, [allAccounts, api.query.substrateUniques.account, mountedRef]);
+  }, [allAccounts, api.query.uniques.account, mountedRef]);
 
   return state;
 }
