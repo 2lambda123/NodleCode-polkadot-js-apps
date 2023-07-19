@@ -293,8 +293,6 @@ function overrideApiKeys (path: string, newPath: string, api: ApiPromise) {
   const method = getObjectProperty(api, newPath);
 
   setObjectProperty(api, path, method);
-
-  return api;
 }
 
 function modifyApiBySpecVersion (api: ApiPromise) {
@@ -304,13 +302,13 @@ function modifyApiBySpecVersion (api: ApiPromise) {
   switch (true) {
     case (Number(specVersion) >= 23) && isNodleParachain: {
       console.log('Nodle Parachain spec version >= 23, overriding unique related methods');
-      const newApi = overrideApiKeys('events.uniques', 'events.substrateUniques', api);
-
-      return overrideApiKeys('query.uniques', 'query.substrateUniques', newApi);
+      overrideApiKeys('events.uniques', 'events.substrateUniques', api);
+      overrideApiKeys('query.uniques', 'query.substrateUniques', api);
+      break;
     }
 
     default:
-      return api;
+      break;
   }
 }
 
