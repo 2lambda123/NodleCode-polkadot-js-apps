@@ -255,6 +255,65 @@ async function createApi (apiUrl: string, signer: ApiSigner, onError: (error: un
   return types;
 }
 
+function getObjectProperty<T> (obj: ApiPromise, propertyPath: string): T | undefined {
+  const properties = propertyPath.split('.');
+  let result: unknown = obj;
+
+  for (const property of properties) {
+    if (typeof result === 'object' && result !== null) {
+      result = (result as Record<string, unknown>)[property];
+    } else {
+      result = undefined;
+      break;
+    }
+  }
+
+  return result as T | undefined;
+}
+
+function setObjectProperty (obj: ApiPromise, propertyPath: string, value: any) {
+  const properties = propertyPath.split('.');
+  const lastProperty = properties.pop();
+  let target = obj as unknown as Record<string, unknown>;
+
+  for (const property of properties) {
+    if (target[property] === undefined) {
+      target[property] = {};
+    }
+
+    target = target[property] as Record<string, unknown>;
+  }
+
+  if (target && lastProperty) {
+    target[lastProperty] = value;
+  }
+}
+
+function overrideApiKeys (path: string, newPath: string, api: ApiPromise) {
+  const method = getObjectProperty(api, newPath);
+
+  setObjectProperty(api, path, method);
+
+  return api;
+}
+
+function modifyApiBySpecVersion (api: ApiPromise) {
+  const isNodleParachain = api.runtimeVersion.specName.toString() === 'nodle-para';
+  const specVersion = api.runtimeVersion.specVersion.toString();
+
+  switch (true) {
+    case (Number(specVersion) >= 23) && isNodleParachain: {
+      console.log('Nodle Parachain spec version >= 23, overriding unique related methods');
+      const newApi = overrideApiKeys('events.uniques', 'events.substrateUniques', api);
+
+      return overrideApiKeys('query.uniques', 'query.substrateUniques', newApi);
+    }
+
+    default:
+      return api;
+  }
+}
+
 export function ApiCtxRoot ({ apiUrl, children, isElectron, store }: Props): React.ReactElement<Props> | null {
   const { queuePayload, queueSetTxStatus } = useQueue();
   const [state, setState] = useState<ApiState>(EMPTY_STATE);
@@ -294,6 +353,8 @@ export function ApiCtxRoot ({ apiUrl, children, isElectron, store }: Props): Rea
         statics.api.on('error', onError);
         statics.api.on('ready', (): void => {
           const injectedPromise = web3Enable('polkadot-js/apps');
+
+          modifyApiBySpecVersion(statics.api);
 
           injectedPromise
             .then(setExtensions)
