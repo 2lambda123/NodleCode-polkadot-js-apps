@@ -8,10 +8,12 @@ export function sectionOptions (api: ApiPromise): DropdownOptions {
   return Object
     .keys(api.query)
     .filter((s) => !s.startsWith('$'))
-    .sort()
     .filter((n) => Object.keys(api.query[n]).length)
+    .filter((n) => !['uniques'].includes(n))
     .map((value): DropdownOption => ({
-      text: value,
+      text: value.replace('_', ''),
       value
-    }));
+    })).sort(
+      (a, b) => (a.text as string).localeCompare(b.text as string)
+    );
 }

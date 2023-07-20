@@ -285,6 +285,7 @@ function setObjectProperty (obj: ApiPromise, propertyPath: string, value: any) {
   }
 
   if (target && lastProperty) {
+    target[`_${lastProperty}`] = target[lastProperty];
     target[lastProperty] = value;
   }
 }

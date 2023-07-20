@@ -24,6 +24,11 @@ interface Props {
   withLabel?: boolean;
 }
 
+// NOTE: this should be dinamic, based on the replaced pallet name
+const map: { [key: string]: string } = {
+  uniques: '_uniques'
+};
+
 function InputStorage ({ className = '', defaultValue, label, onChange, withLabel }: Props): React.ReactElement<Props> {
   const { api } = useApi();
   const [optionsMethod, setOptionsMethod] = useState<DropdownOptions>(() => keyOptions(api, defaultValue.creator.section));
@@ -32,6 +37,8 @@ function InputStorage ({ className = '', defaultValue, label, onChange, withLabe
 
   const _onKeyChange = useCallback(
     (newValue: QueryableStorageEntry<'promise'>): void => {
+      newValue.creator.section = map[newValue.creator.section] || newValue.creator.section;
+
       if (value !== newValue) {
         // set via callback
         setValue(() => newValue);
