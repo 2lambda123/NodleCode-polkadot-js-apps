@@ -58468,11 +58468,6 @@ export const typesBundle = {
               "nature": "Hash",
               "submitter": "SupportedAccountId"
             },
-            "FileParams": {
-              "hash": "Hash",
-              "nature": "Vec<u8>",
-              "submitter": "SupportedAccountId"
-            },
             "File": {
               "hash": "Hash",
               "nature": "Hash",
@@ -68325,6 +68320,12 @@ export const typesBundle = {
       ]
     },
     "nodle-chain": {
+      "signedExtensions": {
+        "ChargeSponsor": {
+          "extrinsic": {},
+          "payload": {}
+        }
+      },
       "types": [
         {
           "minmax": [
