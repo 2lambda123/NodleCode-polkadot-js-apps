@@ -365,7 +365,7 @@ export const prodChains: Omit<EndpointOption, 'teleport'>[] = [
     info: 'nodle',
     providers: {
       // Nodle: 'wss://main3.nodleprotocol.io', // https://github.com/polkadot-js/apps/issues/7652
-      // OnFinality: 'wss://nodle.api.onfinality.io/public-ws' // https://github.com/polkadot-js/apps/issues/8013
+      OnFinality: 'wss://nodle.api.onfinality.io/public-ws' // https://github.com/polkadot-js/apps/issues/8013
     },
     text: 'Nodle',
     ui: {

@@ -5,6 +5,7 @@ import type { TFunction, TOptions } from '../types.js';
 import type { LinkOption } from './types.js';
 
 import { createCustom, createDev, createOwn } from './development.js';
+import { createNodle } from './nodle.js';
 import { prodChains, prodRelayKusama, prodRelayPolkadot } from './production.js';
 import { testChains, testRelayRococo, testRelayWestend } from './testing.js';
 import { expandEndpoints } from './util.js';
@@ -22,8 +23,20 @@ function defaultT (keyOrText: string, text?: string | TOptions, options?: TOptio
 }
 
 export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, withSort = true): LinkOption[] {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return [
     ...createCustom(t),
+    {
+      isDisabled: false,
+      isHeader: true,
+      isSpaced: true,
+      text: t('rpc/.header.nodle', 'Nodle', { ns: 'apps-config' }),
+      textBy: '',
+      ui: {},
+      value: ''
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    ...createNodle(t, firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
