@@ -17,7 +17,7 @@ export function createNodle (t: TFunction, firstOnly: boolean, withSort: boolean
       text: t('rpc.nodle-eden', 'Mainnet', { ns: 'apps-config' }),
       providers: {
         OnFinality: 'wss://nodle-parachain.api.onfinality.io/public-ws',
-        Dwellir: 'wss://eden-rpc.dwellir.com'
+        Dwellir: 'wss://nodle-rpc.dwellir.com'
       },
       ui: {
         color: '#1ab394',
