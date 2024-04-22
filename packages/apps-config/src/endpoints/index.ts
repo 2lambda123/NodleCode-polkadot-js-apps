@@ -1,4 +1,4 @@
-// Copyright 2017-2023 @polkadot/apps-config authors & contributors
+// Copyright 2017-2024 @polkadot/apps-config authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { TFunction, TOptions } from '../types.js';
@@ -8,6 +8,7 @@ import { createCustom, createDev, createOwn } from './development.js';
 import { createNodle } from './nodle.js';
 import { prodChains, prodRelayKusama, prodRelayPolkadot } from './production.js';
 import { testChains, testRelayRococo, testRelayWestend } from './testing.js';
+import { testRelayPaseo } from './testingRelayPaseo.js';
 import { expandEndpoints } from './util.js';
 
 export { CUSTOM_ENDPOINT_KEY } from './development.js';
@@ -75,6 +76,16 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       value: ''
     },
     ...expandEndpoints(t, [testRelayRococo], firstOnly, withSort),
+    {
+      isDisabled: false,
+      isHeader: true,
+      isSpaced: true,
+      text: t('rpc.header.paseo.relay', 'Test Paseo & parachains', { ns: 'apps-config' }),
+      textBy: '',
+      ui: {},
+      value: ''
+    },
+    ...expandEndpoints(t, [testRelayPaseo], firstOnly, withSort),
     {
       isDisabled: false,
       isHeader: true,
