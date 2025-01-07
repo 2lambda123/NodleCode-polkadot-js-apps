@@ -15,7 +15,7 @@
   "rpc.header.westend.relay": "Test Westend & parachains",
   "rpc.hosted.via": "via {{host}}",
   "rpc.nodle-eden": "Mainnet",
-  "rpc.nodle-paradis": "Testnet",
+  "rpc.nodle-hades": "Testnet",
   "rpc/.header.nodle": "Nodle",
   "ss58.default": "Default for the connected node"
 }
