@@ -1269,7 +1269,7 @@
   "rpc.manta": "Manta Testnet",
   "rpc.nodle-arcadia": "Arcadia (Nodle Testnet, hosted by Nodle)",
   "rpc.nodle-eden": "Mainnet",
-  "rpc.nodle-paradis": "Testnet",
+  "rpc.nodle-hades": "Testnet",
   "rpc.polkadot.acala": "Acala",
   "rpc.polkadot.astar": "Astar",
   "rpc.polkadot.bifrost": "Bifrost",

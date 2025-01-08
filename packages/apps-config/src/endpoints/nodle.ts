@@ -26,9 +26,9 @@ export function createNodle (t: TFunction, firstOnly: boolean, withSort: boolean
     },
     {
       info: 'nodle',
-      text: t('rpc.nodle-paradis', 'Testnet', { ns: 'apps-config' }),
+      text: t('rpc.nodle-hades', 'Testnet', { ns: 'apps-config' }),
       providers: {
-        OnFinality: 'wss://node-6957502816543653888.lh.onfinality.io/ws?apikey=09b04494-3139-4b57-a5d1-e1c4c18748ce'
+        OnFinality: 'wss://node-7273232234617282560.nv.onfinality.io/ws?apikey=b937a7d7-7395-49b9-b745-60a0342fa365'
       },
       ui: {
         color: '#1ab394',
